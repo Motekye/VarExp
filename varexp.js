@@ -1,4 +1,4 @@
-// Variable Explorer
+// Variable Explorer...
 
 
 VAREXP = {
@@ -24,6 +24,7 @@ VAREXP = {
 	up_event: null,
 	x: 0, lx: 0, vx: 0,
 	y: 0, ly: 0, vy: 0,
+	
 
 
 	/*
@@ -31,6 +32,11 @@ VAREXP = {
 	*/
 	built: false,
 	build: function(){
+	
+		if(/Android|BB|BlackBerry|iP[hone|ad|od]/.test(navigator.userAgent)){
+			alert("The Variable Explorer is not designed for mobile devices. Please try on a PC or Laptop.");
+			return;
+		}
 	
 		// main window:
 		VAREXP.root_element = document.createElement('div');
