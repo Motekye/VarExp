@@ -3,7 +3,7 @@
 
 VAREXP = {
 
-  
+
 	root_element: null,
 	title_element: null,
 	moving: false,
@@ -18,7 +18,6 @@ VAREXP = {
 	resizing: false,
 	footer_element: null,
 	
-  
 	W: 244, MNW: 244,
 	H: 232, MNH: 122,
 	move_event: null,
@@ -35,52 +34,52 @@ VAREXP = {
 	
 		// main window:
 		VAREXP.root_element = document.createElement('div');
-		VAREXP.root_element.style = " position:fixed; left:100px; top:100px; z-index:10000; width:244px; height:232px; background-color:#CCC; border:1px solid #000; overflow:hidden; "
+		VAREXP.root_element.style = " position:fixed; left:100px; top:100px; z-index:10000; width:244px; height:232px; background-color:#CCC; border:1px solid #000; overflow:hidden; ";
 		document.body.appendChild(VAREXP.root_element);
 		
 		// close button:
 		VAREXP.button_close = document.createElement('b');
-		VAREXP.button_close.style = " float:right; width:14px; height:14px; background-color:#CCC; border-left:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; "
+		VAREXP.button_close.style = " float:right; width:14px; height:14px; background-color:#CCC; border-left:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; ";
 		VAREXP.button_close.style.backgroundImage = VAREXP.image.close;
 		VAREXP.button_close.setAttribute('onclick','VAREXP.hide();');
 		VAREXP.root_element.appendChild(VAREXP.button_close);
 		
 		// shade button:
 		VAREXP.button_shade = document.createElement('b');
-		VAREXP.button_shade.style = " float:left; width:14px; height:14px; background-color:#CCC; border-right:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; "
+		VAREXP.button_shade.style = " float:left; width:14px; height:14px; background-color:#CCC; border-right:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; ";
 		VAREXP.button_shade.style.backgroundImage = VAREXP.image.shade;
 		VAREXP.button_shade.setAttribute('onclick','VAREXP.shade();');
 		VAREXP.root_element.appendChild(VAREXP.button_shade);
 		
 		// pin button:
 		VAREXP.button_pin = document.createElement('b');
-		VAREXP.button_pin.style = " float:left; width:14px; height:14px; background-color:#CCC; border-right:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; "
+		VAREXP.button_pin.style = " float:left; width:14px; height:14px; background-color:#CCC; border-right:1px solid #000; border:1px solid #FFF; border-bottom:1px solid #888; border-right:1px solid #888; ";
 		VAREXP.button_pin.style.backgroundImage = VAREXP.image.pinned;
 		VAREXP.button_pin.setAttribute('onclick','VAREXP.pin();');
 		VAREXP.root_element.appendChild(VAREXP.button_pin);
 		
 		// title bar:
 		VAREXP.title_element = document.createElement('div');
-		VAREXP.title_element.style = " height:16px; background-color:#006; color:#FFF; font-weight:bold; text-align:center; font-size:12px; border-bottom:1px solid #000; cursor:default; "
+		VAREXP.title_element.style = " height:16px; background-color:#006; color:#FFF; font-weight:bold; text-align:center; font-size:12px; border-bottom:1px solid #000; cursor:default; ";
 		VAREXP.title_element.setAttribute('onmousedown','VAREXP.moving = true;');
 		VAREXP.title_element.innerHTML = "Variable Explorer";
 		VAREXP.root_element.appendChild(VAREXP.title_element);
 		
 		// variable container:
 		VAREXP.inner_container = document.createElement('ul');
-		VAREXP.inner_container.style = " width:100%; margin-left:-4px; height:calc(100% - 38px ); background-color:#CCC; overflow-y:scroll; overflow-x:hidden;\n\t\t\tfont-size:9px; line-height:10px; color:#000; LSN; margin:0; padding:0; border-top:2px solid #888; border-bottom:2px solid #888; "
+		VAREXP.inner_container.style = " width:100%; margin-left:-4px; height:calc(100% - 38px ); background-color:#CCC; overflow-y:scroll; overflow-x:hidden;\n\t\t\tfont-size:9px; line-height:10px; color:#000; LSN; margin:0; padding:0; border-top:2px solid #888; border-bottom:2px solid #888; ";
 		VAREXP.root_element.appendChild(VAREXP.inner_container);
 		
 		// resize toggle:
 		VAREXP.button_resize = document.createElement('b');
-		VAREXP.button_resize.style = " float:right; width:16px; height:16px; margin-top:1px; background-color:#888; cursor:se-resize; "
+		VAREXP.button_resize.style = " float:right; width:16px; height:16px; margin-top:1px; background-color:#888; cursor:se-resize; ";
 		VAREXP.button_resize.style.backgroundImage = VAREXP.image.resize;
 		VAREXP.button_resize.setAttribute('onmousedown','VAREXP.resizing = true;');
 		VAREXP.root_element.appendChild(VAREXP.button_resize);
 		
 		// footer bar:
 		VAREXP.footer_element = document.createElement('div');
-		VAREXP.footer_element.style = " height:16px; color:#222; background-color:#CCC; text-indent:16px; font-size:9px; border-top:1px solid #000; line-height:16px; cursor:default; "
+		VAREXP.footer_element.style = " height:16px; color:#222; background-color:#CCC; text-indent:16px; font-size:9px; border-top:1px solid #000; line-height:16px; cursor:default; ";
 		VAREXP.footer_element.setAttribute('onmousedown','VAREXP.moving = true;');
 		VAREXP.footer_element.innerHTML = "window";
 		VAREXP.root_element.appendChild(VAREXP.footer_element);
@@ -220,17 +219,17 @@ VAREXP = {
 		// build elements for entry:
 		var e=document.createElement('li'), ex=document.createElement('b'), ty=document.createElement('tt'), 
 			nm=document.createElement('i'), vl=document.createElement('span'), ul=document.createElement('ul');
-		e.style = " display:block; clear:both; height:10px; border-bottom:1px dotted #888; background-repeat:no-repeat; background-position:0 0; padding-left:4px;  "
+		e.style = " display:block; clear:both; height:10px; border-bottom:1px dotted #888; background-repeat:no-repeat; background-position:0 0; padding-left:4px; ";
 		e.style.backgroundImage = VAREXP.image.tree_mid;
 		parent.appendChild(e);
-		ex.style = " display:block; float:left; height:10px; width:10px; padding-right:3px; background-repeat:no-repeat; background-position:2px 2px; "
+		ex.style = " display:block; float:left; height:10px; width:10px; padding-right:3px; background-repeat:no-repeat; background-position:2px 2px; ";
 		ex.style.backgroundImage = VAREXP.image.noexpand;
 		e.appendChild(ex);
-		ty.style = " display:block; float:left; height:10px; width:24px; color:#555; font-family:inherit; "
+		ty.style = " display:block; float:left; height:10px; width:24px; color:#555; font-family:inherit; ";
 		ty.style.color = tcolor;
 		ty.innerHTML = type;
 		e.appendChild(ty);
-		vl.style = " display:block; float:right; max-width:calc(100% - 200px ); width:45%; height:10px; color:#000; font-size:8px; line-height:11px; "
+		vl.style = " display:block; float:right; max-width:calc(100% - 200px ); width:45%; height:10px; color:#000; font-size:8px; line-height:11px; ";
 		switch(type){
 			case "Un": case "Null": case "Obj": case "Elm": case "Sym":
 				break;
@@ -256,14 +255,14 @@ VAREXP = {
 				vl.style.fontStyle = 'italic';
 		}
 		e.appendChild(vl);
-		nm.style = " display:block; height:10px; font-style:normal; font-weight:bold; overflow:hidden; "
+		nm.style = " display:block; height:10px; font-style:normal; font-weight:bold; overflow:hidden; ";
 		if(type==''){ nm.style.color = '#888'; }
 		nm.innerHTML = name;
 		e.appendChild(nm);
 		// check for descendants, add list:
 		if(type=="Obj"){
 			e.appendChild(ul);
-			ul.style = " clear:both; padding-top:1px; margin-left:1px; padding-left:4px; background-repeat:repeat-y; background-position:04px; display:none; "
+			ul.style = " clear:both; padding-top:1px; margin-left:1px; padding-left:4px; background-repeat:repeat-y; background-position:04px; display:none; ";
 			ul.style.backgroundImage = VAREXP.image.tree_bar;
 			ex.style.backgroundImage = VAREXP.image.expand;
 			ex.setAttribute('onclick','VAREXP.expand(this);');
@@ -365,5 +364,5 @@ VAREXP = {
 		tree_end:	'url('+"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAALCAYAAAC3ZUeVAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TtSIVBzuIiGSoThZERRy1CkWoEGqFVh1MLv2CJg1Jiouj4Fpw8GOx6uDirKuDqyAIfoA4OjkpukiJ/0sKLWI8OO7Hu3uPu3eAUC8zzeoYBzTdNlOJuJjJroqhV3RhGEGIiMrMMuYkKQnf8XWPAF/vYjzL/9yfo1fNWQwIiMSzzDBt4g3i6U3b4LxPHGFFWSU+Jx4z6YLEj1xXPH7jXHBZ4JkRM52aJ44Qi4U2VtqYFU2NeIo4qmo65QsZj1XOW5y1cpU178lfGM7pK8tcpzmEBBaxBIk6UlBFCWXYiNGqk2IhRftxH/+g65fIpZCrBEaOBVSgQXb94H/wu1srPznhJYXjQOeL43yMAKFdoFFznO9jx2mcAMFn4Epv+St1YOaT9FpLix4BfdvAxXVLU/aAyx1g4MmQTdmVgjSFfB54P6NvygL9t0DPmtdbcx+nD0CaukreAAeHwGiBstd93t3d3tu/Z5r9/QB6nHKqrrqYFgAAAAZiS0dEAP8AAAAAMyd88wAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+YGHgYlMhfmeuYAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAALUlEQVQI12Ps6Oj47+LiwoAMmBiwAAoFWRgYGBj27NmDIsh45syZ/1S2CKsgAHFKCRHh1lgFAAAAAElFTkSuQmCC"+')'
 	}
 
-  
+
 };
