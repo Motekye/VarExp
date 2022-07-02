@@ -1,6 +1,8 @@
 # Variable Explorer
 
-The variable explorer is a single javascript file which you may include on your page to make use of this application. Simply download the **varexp.js** or **varexp-min.js** file and include on your page with a script tag...
+
+
+The variable explorer is a single javascript file which you may include on your page to view the values of all descendant properties of window. Simply download the **varexp.js** or **varexp-min.js** file and include on your page with a script tag...
 
     <script type="text/javascript" src="path/to/varexp.js"></script>
 
