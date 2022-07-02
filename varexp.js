@@ -1,4 +1,4 @@
-// Variable Explorer...
+// Variable Explorer
 
 
 VAREXP = {
@@ -26,17 +26,11 @@ VAREXP = {
 	y: 0, ly: 0, vy: 0,
 	
 
-
 	/*
 	 *	Build the variable explorer layout
 	*/
 	built: false,
 	build: function(){
-	
-		if(/Android|BB|BlackBerry|iP[hone|ad|od]/.test(navigator.userAgent)){
-			alert("The Variable Explorer is not designed for mobile devices. Please try on a PC or Laptop.");
-			return;
-		}
 	
 		// main window:
 		VAREXP.root_element = document.createElement('div');
@@ -105,6 +99,10 @@ VAREXP = {
 	 *	Open the variable explorer and display window
 	*/
 	show: function(){
+		if(/Android|BB|BlackBerry|iP[hone|ad|od]/.test(navigator.userAgent)){
+			alert("The Variable Explorer is not designed for mobile devices. Please try on a PC or Laptop.");
+			return;
+		}
 		if(!VAREXP.built){ VAREXP.build(); }
 		VAREXP.root_element.style.display = 'block';
 		VAREXP.open = true;
